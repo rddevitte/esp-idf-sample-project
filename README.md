@@ -1,5 +1,7 @@
 # ESP-IDF Sample Project
 
+## Introduction
+
 This is a relative simple and small project I've created to teach myself how to code, build and
 flash an ESP32 project using the ESP-IDF tools directly, i.e., no IDE required, only a text editor
 and the terminal.
@@ -8,6 +10,14 @@ Plus, the project shows
 
 - how to structure the code onto components (&ldquo;componentize&rdquo;);
 - how to make some project parameters configurable through `menuconfig`.
+
+The project has two main components:
+
+- the `output_pin_toggler`, used to blink an LED connected to pin 16 of the board;
+- the `random_numbers_getter`, used to simulate the values of sensors.
+
+Each component is used by two independent running tasks, `led_blinker_task` and
+`fake_sensors_value_printer_task`.
 
 ## Assumptions
 
@@ -31,7 +41,9 @@ With this project cloned and the terminal open in the project's root directory, 
 
 ### Set target board
 
-To set a generic ESP32 as the target board, run `idf.py set-target esp32`.
+To set a generic ESP32 as the target board, run
+
+    idf.py set-target esp32
 
 Please refer to the Espressif documentation in order to set a different board as the target.
 
@@ -71,3 +83,6 @@ To remove the artifacts produced by the build process, run
 Thanks to [this YouTube video by Low Level Learning][2] for inspiring me to create this project.
 
 [2]: https://www.youtube.com/watch?v=dOVjb2wXI84
+
+Also thanks to Espressif for providing project examples on ESP-32, which are located in
+`~/esp/esp-idf/examples` directory.
