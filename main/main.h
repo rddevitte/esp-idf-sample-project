@@ -8,6 +8,8 @@
 
 static const char *TAG = "esp-idf-sample-project";
 
+static void display_system_info(void);
+
 static void led_blinker_task(void *pvParameters);
 
 static void fake_sensors_value_printer_task(void *pvParameters);
